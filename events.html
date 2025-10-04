@@ -1,0 +1,124 @@
+<!--
+  File: events.html
+  Project: Bugeta Tourism Website
+  Description: หน้าข่าวสารและกิจกรรมท้องถิ่น
+-->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ข่าวสาร & กิจกรรม | เทศบาลตำบลบูเก๊ะตา</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="container nav__inner">
+        <a href="index.html" class="brand">ท่องเที่ยวบูเก๊ะตา</a>
+        <button class="nav__toggle" id="navToggle" aria-label="เมนู">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a href="index.html">หน้าแรก</a>
+          <a href="destinations.html">แหล่งท่องเที่ยว</a>
+          <a href="hornbill.html">นกเงือก</a>
+          <a href="travel.html">การเดินทาง</a>
+          <a href="events.html" class="is-active">กิจกรรม</a>
+          <a href="gallery.html">แกลเลอรี</a>
+          <a href="contact.html">ติดต่อ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <h1 class="section__title">ข่าวสาร & กิจกรรม</h1>
+          <p class="section__lead">กิจกรรมสำคัญและเทศกาลที่จัดขึ้นในพื้นที่</p>
+        </header>
+
+        <div class="grid grid--3">
+          <!-- Event 1 -->
+          <article class="card">
+            <div class="card__body">
+              <p class="kicker">กิจกรรม</p>
+              <h3 class="card__title">เดินป่าชมป่าฮาลา–บาลา</h3>
+              <p class="card__text">
+                ร่วมเดินสำรวจเส้นทางธรรมชาติ เรียนรู้ระบบนิเวศ และชมความหลากหลายของนกเงือก
+              </p>
+              <p class="meta"><strong>วันที่:</strong> 5 ธันวาคม 2025</p>
+              <p class="meta"><strong>สถานที่:</strong> จุดนัดพบที่ทำการอุทยาน</p>
+            </div>
+          </article>
+
+          <!-- Event 2 -->
+          <article class="card">
+            <div class="card__body">
+              <p class="kicker">เทศกาล</p>
+              <h3 class="card__title">เทศกาลชมนกเงือก</h3>
+              <p class="card__text">
+                พบปะนักดูนกจากทั่วประเทศ ชมบรรยากาศการเก็บข้อมูลเชิงอนุรักษ์ และร่วมกิจกรรมถ่ายภาพ
+              </p>
+              <p class="meta"><strong>วันที่:</strong> 10 กุมภาพันธ์ 2026</p>
+              <p class="meta"><strong>สถานที่:</strong> จุดชมหลักรอบป่าฮาลา–บาลา</p>
+            </div>
+          </article>
+
+          <!-- Event 3 -->
+          <article class="card">
+            <div class="card__body">
+              <p class="kicker">วัฒนธรรม</p>
+              <h3 class="card__title">เวิร์กช็อปวัฒนธรรมมลายู</h3>
+              <p class="card__text">
+                เรียนรู้ภูมิปัญญาและเครื่องมือดั้งเดิม ชมการตีดาบกริชและทดลองทำเครื่องจักสาน
+              </p>
+              <p class="meta"><strong>วันที่:</strong> 15 มีนาคม 2026</p>
+              <p class="meta"><strong>สถานที่:</strong> พิพิธภัณฑ์โละจูด</p>
+            </div>
+          </article>
+
+          <!-- Event 4 -->
+          <article class="card">
+            <div class="card__body">
+              <p class="kicker">ชุมชน</p>
+              <h3 class="card__title">กิจกรรมวันเด็ก</h3>
+              <p class="card__text">
+                สนุกกับการละเล่นท้องถิ่น กิจกรรมบันเทิง และของรางวัลมากมายสำหรับเด็ก ๆ
+              </p>
+              <p class="meta"><strong>วันที่:</strong> 10 มกราคม 2026</p>
+              <p class="meta"><strong>สถานที่:</strong> สวนสาธารณะโต๊ะดาตู</p>
+            </div>
+          </article>
+
+          <!-- Event 5 -->
+          <article class="card">
+            <div class="card__body">
+              <p class="kicker">สิ่งแวดล้อม</p>
+              <h3 class="card__title">กิจกรรมปลูกต้นไม้</h3>
+              <p class="card__text">
+                ร่วมกันปลูกต้นไม้เพื่อฟื้นฟูพื้นที่สีเขียว และสร้างความสมดุลให้กับระบบนิเวศ
+              </p>
+              <p class="meta"><strong>วันที่:</strong> 20 เมษายน 2026</p>
+              <p class="meta"><strong>สถานที่:</strong> พื้นที่อนุรักษ์ชุมชน</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> เทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง</p>
+    </div>
+  </footer>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>

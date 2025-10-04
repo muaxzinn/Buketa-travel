@@ -1,0 +1,96 @@
+<!--
+  File: contact.html
+  Project: Bugeta Tourism Website
+  Description: หน้าติดต่อเทศบาลตำบลบูเก๊ะตา
+-->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ติดต่อเทศบาล | เทศบาลตำบลบูเก๊ะตา</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="container nav__inner">
+        <a href="index.html" class="brand">ท่องเที่ยวบูเก๊ะตา</a>
+        <button class="nav__toggle" id="navToggle" aria-label="เมนู">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a href="index.html">หน้าแรก</a>
+          <a href="destinations.html">แหล่งท่องเที่ยว</a>
+          <a href="hornbill.html">นกเงือก</a>
+          <a href="travel.html">การเดินทาง</a>
+          <a href="events.html">กิจกรรม</a>
+          <a href="gallery.html">แกลเลอรี</a>
+          <a href="contact.html" class="is-active">ติดต่อ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <h1 class="section__title">ติดต่อเทศบาลตำบลบูเก๊ะตา</h1>
+          <p class="section__lead">ตำบลโละจูด อำเภอแว้ง จังหวัดนราธิวาส</p>
+        </header>
+
+        <div class="grid grid--2">
+          <!-- Contact Info -->
+          <div>
+            <h2>ข้อมูลติดต่อ</h2>
+            <p><strong>ที่อยู่:</strong> สำนักงานเทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง จังหวัดนราธิวาส</p>
+            <p><strong>โทรศัพท์:</strong> 073-xxxxxx</p>
+            <p><strong>อีเมล:</strong> info@bugeta.go.th</p>
+
+            <h2>เวลาทำการ</h2>
+            <p>จันทร์ – ศุกร์ : 08.30 – 16.30 น.<br>หยุดวันเสาร์ – อาทิตย์ และวันหยุดนักขัตฤกษ์</p>
+
+            <h2>ติดตามเรา</h2>
+            <p>
+              <a href="#">Facebook</a> | 
+              <a href="#">YouTube</a> | 
+              <a href="#">Line Official</a>
+            </p>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <h2>ส่งข้อความถึงเรา</h2>
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('ส่งข้อความเรียบร้อยแล้ว'); this.reset();" style="display:flex;flex-direction:column;gap:12px;">
+              <input type="text" name="name" placeholder="ชื่อของคุณ" required style="padding:10px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;">
+              <input type="email" name="email" placeholder="อีเมล" required style="padding:10px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;">
+              <textarea name="message" placeholder="ข้อความ" rows="6" required style="padding:10px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;"></textarea>
+              <button type="submit" class="btn btn--primary">ส่งข้อความ</button>
+            </form>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <h2>แผนที่สำนักงานเทศบาล</h2>
+          <iframe
+            src="https://www.google.com/maps?q=เทศบาลตำบลบูเก๊ะตา+ตำบลโละจูด+อำเภอแว้ง&output=embed"
+            width="100%" height="400" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> เทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง</p>
+    </div>
+  </footer>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>

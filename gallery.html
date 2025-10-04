@@ -1,0 +1,81 @@
+<!--
+  File: gallery.html
+  Project: Bugeta Tourism Website
+  Description: หน้าแกลเลอรีรูปภาพ
+-->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แกลเลอรี | เทศบาลตำบลบูเก๊ะตา</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="container nav__inner">
+        <a href="index.html" class="brand">ท่องเที่ยวบูเก๊ะตา</a>
+        <button class="nav__toggle" id="navToggle" aria-label="เมนู">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a href="index.html">หน้าแรก</a>
+          <a href="destinations.html">แหล่งท่องเที่ยว</a>
+          <a href="hornbill.html">นกเงือก</a>
+          <a href="travel.html">การเดินทาง</a>
+          <a href="events.html">กิจกรรม</a>
+          <a href="gallery.html" class="is-active">แกลเลอรี</a>
+          <a href="contact.html">ติดต่อ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <h1 class="section__title">แกลเลอรี</h1>
+          <p class="section__lead">รวมภาพความสวยงามของธรรมชาติและวัฒนธรรมในบูเก๊ะตา</p>
+        </header>
+
+        <!-- Masonry Gallery -->
+        <div class="masonry">
+          <div class="masonry__item">
+            <img src="assets/images/hala-bala.jpg" alt="ป่าฮาลา–บาลา">
+          </div>
+          <div class="masonry__item">
+            <img src="assets/images/sirindhorn.jpg" alt="น้ำตกสิรินธร">
+          </div>
+          <div class="masonry__item">
+            <img src="assets/images/hornbill.jpg" alt="นกเงือก">
+          </div>
+          <div class="masonry__item">
+            <img src="assets/images/lojood.jpg" alt="พิพิธภัณฑ์โละจูด">
+          </div>
+          <div class="masonry__item">
+            <img src="assets/images/tota-datu.jpg" alt="สวนสาธารณะโต๊ะดาตู">
+          </div>
+          <!-- สามารถเพิ่มภาพได้เรื่อย ๆ -->
+        </div>
+
+        <div style="text-align:center; margin-top:30px;">
+          <a class="btn btn--primary" href="contact.html">ร่วมส่งภาพสวย ๆ ของคุณ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> เทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง</p>
+    </div>
+  </footer>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>

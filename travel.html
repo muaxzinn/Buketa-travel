@@ -1,0 +1,92 @@
+<!--
+  File: travel.html
+  Project: Bugeta Tourism Website
+  Description: หน้าการเดินทางมายังเทศบาลตำบลบูเก๊ะตา
+-->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>การเดินทาง | เทศบาลตำบลบูเก๊ะตา</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="container nav__inner">
+        <a href="index.html" class="brand">ท่องเที่ยวบูเก๊ะตา</a>
+        <button class="nav__toggle" id="navToggle" aria-label="เมนู">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a href="index.html">หน้าแรก</a>
+          <a href="destinations.html">แหล่งท่องเที่ยว</a>
+          <a href="hornbill.html">นกเงือก</a>
+          <a href="travel.html" class="is-active">การเดินทาง</a>
+          <a href="events.html">กิจกรรม</a>
+          <a href="gallery.html">แกลเลอรี</a>
+          <a href="contact.html">ติดต่อ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <h1 class="section__title">การเดินทางมายังเทศบาลตำบลบูเก๊ะตา</h1>
+          <p class="section__lead">ตำบลโละจูด อำเภอแว้ง จังหวัดนราธิวาส</p>
+        </header>
+
+        <div class="grid grid--2">
+          <div>
+            <h2>การเดินทางโดยรถยนต์</h2>
+            <p>
+              จากตัวเมืองนราธิวาส ใช้ถนนทางหลวงหมายเลข 4055 มุ่งหน้าไปอำเภอแว้ง 
+              ระยะทางประมาณ 70 กิโลเมตร ใช้เวลาขับรถราว 1 ชั่วโมงครึ่ง 
+              จากนั้นเลี้ยวเข้าสู่เส้นทางท้องถิ่นที่มุ่งหน้าสู่เทศบาลตำบลบูเก๊ะตา
+            </p>
+
+            <h2>การเดินทางโดยขนส่งสาธารณะ</h2>
+            <p>
+              สามารถนั่งรถตู้หรือรถโดยสารจากตัวเมืองนราธิวาสมายังอำเภอแว้ง 
+              จากนั้นต่อรถสองแถวหรือมอเตอร์ไซค์รับจ้างเข้าสู่พื้นที่บูเก๊ะตา
+            </p>
+
+            <h2>ช่วงเวลาที่เหมาะสม</h2>
+            <ul>
+              <li>ฤดูหนาว (พ.ย.–ก.พ.) อากาศเย็นสบาย</li>
+              <li>ฤดูร้อน (มี.ค.–พ.ค.) เหมาะกับการเที่ยวป่าและชมสัตว์</li>
+              <li>ฤดูฝน (มิ.ย.–ต.ค.) น้ำตกมีน้ำมาก แต่ควรระวังถนนลื่น</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>แผนที่ Google Maps</h2>
+            <iframe
+              src="https://www.google.com/maps?q=เทศบาลตำบลบูเก๊ะตา+ตำบลโละจูด+อำเภอแว้ง&output=embed"
+              width="100%" height="400" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy">
+            </iframe>
+            <p style="margin-top:10px;">
+              <a class="btn btn--primary" href="https://www.google.com/maps?q=เทศบาลตำบลบูเก๊ะตา+ตำบลโละจูด+อำเภอแว้ง" target="_blank" rel="noopener">เปิดใน Google Maps</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> เทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง</p>
+    </div>
+  </footer>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>

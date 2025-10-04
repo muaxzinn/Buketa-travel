@@ -1,0 +1,139 @@
+<!--
+  File: destinations.html
+  Project: Bugeta Tourism Website
+  Description: หน้ารวมแหล่งท่องเที่ยว
+-->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แหล่งท่องเที่ยว | เทศบาลตำบลบูเก๊ะตา</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="container nav__inner">
+        <a href="index.html" class="brand">ท่องเที่ยวบูเก๊ะตา</a>
+        <button class="nav__toggle" id="navToggle" aria-label="เมนู">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a href="index.html">หน้าแรก</a>
+          <a href="destinations.html" class="is-active">แหล่งท่องเที่ยว</a>
+          <a href="hornbill.html">นกเงือก</a>
+          <a href="travel.html">การเดินทาง</a>
+          <a href="events.html">กิจกรรม</a>
+          <a href="gallery.html">แกลเลอรี</a>
+          <a href="contact.html">ติดต่อ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <h1 class="section__title">แหล่งท่องเที่ยว</h1>
+          <p class="section__lead">รวมสถานที่ท่องเที่ยวเด่นในเทศบาลตำบลบูเก๊ะตา</p>
+        </header>
+
+        <!-- Search bar -->
+        <input type="text" id="searchDest" placeholder="ค้นหาสถานที่..." style="width:100%;padding:10px;margin-bottom:20px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;">
+
+        <div class="grid grid--2">
+          <!-- ป่าฮาลา–บาลา -->
+          <div class="card" id="hala-bala">
+            <div class="card__media">
+              <img src="assets/images/hala-bala.jpg" alt="ป่าฮาลา–บาลา">
+            </div>
+            <div class="card__body">
+              <p class="kicker">ธรรมชาติ</p>
+              <h3 class="card__title">ป่าฮาลา–บาลา</h3>
+              <p class="card__text">ผืนป่าดิบชื้นที่สมบูรณ์ที่สุดแห่งหนึ่งของไทย ฉายา “อะเมซอนแห่งอาเซียน” มีความหลากหลายทางชีวภาพสูง โดยเฉพาะนกเงือก</p>
+              <ul class="meta">
+                <li><strong>เหมาะสม:</strong> พ.ย.–เม.ย.</li>
+                <li><strong>คำแนะนำ:</strong> แต่งกายรัดกุม ไม่ส่งเสียงดัง</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- น้ำตกสิรินธร -->
+          <div class="card" id="sirindhorn">
+            <div class="card__media">
+              <img src="assets/images/sirindhorn.jpg" alt="น้ำตกสิรินธร">
+            </div>
+            <div class="card__body">
+              <p class="kicker">ธรรมชาติ</p>
+              <h3 class="card__title">น้ำตกสิรินธร</h3>
+              <p class="card__text">น้ำตกสวยงาม เล่นน้ำได้หลายชั้น น้ำใสเย็น เหมาะกับการท่องเที่ยวแบบครอบครัว</p>
+              <ul class="meta">
+                <li><strong>ฤดูกาล:</strong> หลังฝนใหม่ น้ำไม่เชี่ยว</li>
+                <li><strong>คำเตือน:</strong> ระวังลื่น ควรใส่รองเท้าที่กันลื่น</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- พิพิธภัณฑ์โละจูด -->
+          <div class="card" id="lojood">
+            <div class="card__media">
+              <img src="assets/images/lojood.jpg" alt="พิพิธภัณฑ์โละจูด">
+            </div>
+            <div class="card__body">
+              <p class="kicker">วัฒนธรรม</p>
+              <h3 class="card__title">พิพิธภัณฑ์โละจูด</h3>
+              <p class="card__text">สถานที่เรียนรู้วิถีชีวิตแบบมลายูดั้งเดิม จัดแสดงกริช เครื่องใช้ และโบราณวัตถุจากชุมชน</p>
+              <ul class="meta">
+                <li><strong>เวลาเปิด:</strong> ตรวจสอบกับเทศบาล</li>
+                <li><strong>ข้อควรปฏิบัติ:</strong> ไม่จับวัตถุจัดแสดงโดยไม่ได้รับอนุญาต</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- สวนสาธารณะโต๊ะดาตู -->
+          <div class="card" id="tota-datu">
+            <div class="card__media">
+              <img src="assets/images/tota-datu.jpg" alt="สวนสาธารณะโต๊ะดาตู">
+            </div>
+            <div class="card__body">
+              <p class="kicker">ชุมชน</p>
+              <h3 class="card__title">สวนสาธารณะโต๊ะดาตู</h3>
+              <p class="card__text">พื้นที่พักผ่อนของคนในท้องถิ่น มีรูปปั้นนกเงือกเป็นแลนด์มาร์ก พร้อมสนามเด็กเล่นและลานกิจกรรม</p>
+              <ul class="meta">
+                <li><strong>ช่วงเวลาแนะนำ:</strong> เช้า/เย็น</li>
+                <li><strong>หมายเหตุ:</strong> ดูแลเด็กเล็ก และเคารพกติกาชุมชน</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ดูนกเงือก -->
+          <div class="card">
+            <div class="card__media">
+              <img src="assets/images/hornbill.jpg" alt="ดูนกเงือก">
+            </div>
+            <div class="card__body">
+              <p class="kicker">ธรรมชาติ</p>
+              <h3 class="card__title">ดูนกเงือก</h3>
+              <p class="card__text">บูเก๊ะตาเป็นถิ่นอาศัยสำคัญของนกเงือกมากกว่า 10 สายพันธุ์ พบได้ตามแนวป่าฮาลา–บาลา</p>
+              <a href="hornbill.html" class="btn btn--small">ดูรายละเอียด</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> เทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง</p>
+    </div>
+  </footer>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>

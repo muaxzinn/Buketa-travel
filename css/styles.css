@@ -1,0 +1,286 @@
+/* =====================================================
+   File: css/style.css
+   Project: Bugeta Tourism Website
+   Description: Responsive Modern Design (Clean & Balanced)
+   ===================================================== */
+
+/* ---------- Color & Font Variables ---------- */
+:root {
+  --bg: #0b0d11;
+  --bg-alt: #11151b;
+  --text: #e6e9ee;
+  --muted: #9aa4b2;
+  --brand: #0ea5a0;
+  --accent: #38bdf8;
+  --gold: #f59e0b;
+
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0,0,0,.25);
+
+  --fs-base: clamp(15px, 1.2vw, 18px);
+  --fs-title: clamp(20px, 2vw, 28px);
+  --fs-h1: clamp(28px, 3vw, 42px);
+  --fs-h2: clamp(22px, 2.5vw, 32px);
+}
+
+/* ---------- Base Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans Thai", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: var(--fs-base);
+  -webkit-font-smoothing: antialiased;
+}
+img { width: 100%; height: auto; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--gold); }
+
+/* ---------- Layout Helpers ---------- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section {
+  padding: clamp(50px, 6vw, 90px) 0;
+}
+.section__head {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 50px);
+}
+.section__title {
+  font-size: var(--fs-h2);
+  margin-bottom: 8px;
+}
+.section__lead {
+  color: var(--muted);
+  font-weight: 300;
+  font-size: var(--fs-base);
+}
+
+/* ---------- Navigation ---------- */
+.site-header {
+  background: rgba(11, 13, 17, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.brand {
+  font-weight: 700;
+  color: var(--brand);
+  font-size: 1.1rem;
+}
+.nav__menu {
+  display: flex;
+  gap: 18px;
+}
+.nav__menu a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: 0.2s;
+}
+.nav__menu a:hover,
+.nav__menu .is-active {
+  background: var(--bg-alt);
+  color: var(--accent);
+}
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.nav__toggle .bar {
+  width: 24px; height: 2px; background: var(--text);
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #0ea5a055, #38bdf855);
+  min-height: 70vh;
+  padding: 40px 0;
+}
+.hero__inner {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+@media(min-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.hero__title {
+  font-size: var(--fs-h1);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.hero__lead {
+  font-size: var(--fs-base);
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.hero__media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  background: #222;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.2s;
+  font-size: 0.95rem;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { background: var(--brand); }
+.btn--ghost { background: transparent; border: 1px solid var(--muted); color: var(--muted); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.card__media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card__body { padding: 16px; }
+.card__title {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+.card__text {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- Grid Layout ---------- */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+.grid--2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid--4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+/* ---------- Masonry Gallery ---------- */
+.masonry {
+  columns: 3 240px;
+  column-gap: 18px;
+}
+.masonry__item {
+  margin-bottom: 18px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.masonry__item img { display: block; width: 100%; }
+
+/* ---------- Callout Section ---------- */
+.callout {
+  background: linear-gradient(135deg, #0ea5a022, #38bdf822);
+  padding: 30px;
+  border-radius: var(--radius);
+}
+.callout__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media(min-width: 800px) {
+  .callout__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.callout__title {
+  font-size: var(--fs-title);
+  margin-bottom: 8px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--bg-alt);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 25px 0;
+  text-align: center;
+}
+.footer__inner {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Back to Top ---------- */
+.to-top {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: var(--shadow);
+}
+.to-top.show { display: block; }
+
+/* ---------- Responsive Navigation ---------- */
+@media(max-width: 768px) {
+  .nav__toggle { display: flex; }
+  .nav__menu {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-alt);
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    padding: 20px;
+  }
+  .nav__menu a {
+    padding: 12px;
+    display: block;
+  }
+  .nav__menu.active { display: flex; }
+}

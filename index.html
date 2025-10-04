@@ -1,0 +1,345 @@
+<!--
+  File: index.html
+  Project: Bugeta Tourism — เว็บไซต์ประชาสัมพันธ์การท่องเที่ยว เทศบาลตำบลบูเก๊ะตา
+  Location focus: เทศบาลตำบลบูเก๊ะตา ตำบลโละจูด อำเภอแว้ง
+
+  โครงสร้างไฟล์นี้ออกแบบให้:
+  - เป็นหน้าแรก (Home) ที่สื่อภาพรวมของแบรนด์พื้นที่
+  - มีเมนูนำทางไปยังทุกหน้า (multi-page)
+  - SEO/OG/JSON-LD พร้อมใช้งาน
+  - รองรับการเข้าถึง (Accessibility) และมือถือ (Responsive)
+  - ใช้ฟอนต์ Noto Sans Thai (โหลดจาก Google Fonts)
+  - ใช้ CSS/JS แยกไฟล์ (จะส่ง style.css และ script.js ในไฟล์ถัดไปตามคำขอ “ทีละไฟล์”)
+
+  โฟลเดอร์ที่ต้องมี:
+  /css/style.css
+  /js/script.js
+  /assets/images/ (เก็บภาพ)
+  /assets/icons/  (เก็บไอคอน)
+-->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ====== SEO ====== -->
+  <title>ท่องเที่ยวบูเก๊ะตา | ป่าฮาลา–บาลา น้ำตกสิรินธร นกเงือก พิพิธภัณฑ์โละจูด</title>
+  <meta name="description" content="ประชาสัมพันธ์การท่องเที่ยว เทศบาลตำบลบูเก๊ะตา — เที่ยวป่าฮาลา–บาลา เล่นน้ำตกสิรินธร ชมนกเงือกกว่า 10 สายพันธุ์ เรียนรู้วิถีมลายูที่พิพิธภัณฑ์โละจูด และพักผ่อนที่สวนสาธารณะโต๊ะดาตู">
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- ====== Open Graph / Social ====== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:title" content="ท่องเที่ยวบูเก๊ะตา | ธรรมชาติ วัฒนธรรม และชุมชน">
+  <meta property="og:description" content="ป่าฮาลา–บาลา • น้ำตกสิรินธร • นกเงือก 10+ สายพันธุ์ • พิพิธภัณฑ์โละจูด • สวนสาธารณะโต๊ะดาตู">
+  <meta property="og:image" content="assets/images/og-hero.jpg">
+  <meta property="og:url" content="https://example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ====== Theme / Icons ====== -->
+  <meta name="theme-color" content="#0b0d11">
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+
+  <!-- ====== Fonts ====== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- ฟอนต์เดียวทั้งเว็บ: Noto Sans Thai (น้ำหนัก 300/400/600/700) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ====== CSS ส่วนกลาง (จะส่งไฟล์นี้ให้ในข้อความถัดไป) ====== -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ====== Preload ภาพใหญ่ใน Hero เพื่อความลื่น ====== -->
+  <link rel="preload" as="image" href="assets/images/hero.jpg" imagesrcset="assets/images/hero.jpg 1200w" imagesizes="100vw">
+
+  <!-- ====== JSON-LD: Organization + WebSite (ขั้นพื้นฐาน) ====== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"เทศบาลตำบลบูเก๊ะตา",
+    "url":"https://example.com/",
+    "logo":"https://example.com/assets/icons/favicon.png",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"เทศบาลตำบลบูเก๊ะตา",
+      "addressLocality":"ตำบลโละจูด",
+      "addressRegion":"อำเภอแว้ง",
+      "addressCountry":"TH"
+    },
+    "sameAs":[]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://example.com/",
+    "name":"ท่องเที่ยวบูเก๊ะตา",
+    "publisher":{
+      "@type":"Organization",
+      "name":"เทศบาลตำบลบูเก๊ะตา"
+    },
+    "inLanguage":"th-TH",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://example.com/destinations.html?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ====== Skip to content: การเข้าถึงด้วยคีย์บอร์ด ====== -->
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+
+  <!-- ====== Global Navigation (ทุกหน้าจะเหมือนกัน) ====== -->
+  <header class="site-header" role="banner" aria-label="ส่วนหัวเว็บไซต์">
+    <nav class="nav" role="navigation" aria-label="เมนูหลัก">
+      <div class="container nav__inner">
+        <!-- โลโก้ข้อความ + ไอคอนเล็ก -->
+        <a href="index.html" class="brand" aria-label="กลับสู่หน้าแรก ท่องเที่ยวบูเก๊ะตา">
+          <span class="brand__mark" aria-hidden="true">
+            <!-- inline SVG สไตล์สัญลักษณ์นกเงือกมินิมอล -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+              <path d="M3 12c3-5 9-7 14-4 2 1 3 2 4 3-4 2-7 3-9 3-3 0-5 2-6 5-2-2-3-4-3-7Z"/>
+            </svg>
+          </span>
+          <span class="brand__text">ท่องเที่ยวบูเก๊ะตา</span>
+        </a>
+
+        <!-- ปุ่มเมนูมือถือ -->
+        <button class="nav__toggle" id="navToggle" aria-label="สลับเมนู" aria-expanded="false" aria-controls="navMenu">
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+
+        <!-- รายการเมนู -->
+        <div class="nav__menu" id="navMenu">
+          <a href="index.html" class="is-active">หน้าแรก</a>
+          <a href="destinations.html">แหล่งท่องเที่ยว</a>
+          <a href="hornbill.html">นกเงือก</a>
+          <a href="travel.html">การเดินทาง</a>
+          <a href="events.html">กิจกรรม</a>
+          <a href="gallery.html">แกลเลอรี</a>
+          <a href="contact.html">ติดต่อ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== Hero: ภาพเปิดใหญ่ + ข้อความแบรนดิ้ง ====== -->
+  <section id="hero" class="hero" role="region" aria-label="ภาพเปิด">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <h1 class="hero__title">บูเก๊ะตา… ธรรมชาติ วัฒนธรรม และความงดงามชายแดนใต้</h1>
+        <p class="hero__lead">
+          สัมผัสป่าฮาลา–บาลา น้ำตกสิรินธรอันชื่นใจ พบเจ้านกเงือกหลากหลายสายพันธุ์
+          เรียนรู้วิถีมลายูที่พิพิธภัณฑ์โละจูด และพักผ่อนในสวนสาธารณะโต๊ะดาตู
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="travel.html" aria-label="วางแผนการเดินทางมายังเทศบาลตำบลบูเก๊ะตา">วางแผนทริป</a>
+          <a class="btn" href="destinations.html" aria-label="ดูแหล่งท่องเที่ยวทั้งหมดในบูเก๊ะตา">ดูแหล่งท่องเที่ยว</a>
+        </div>
+        <!-- Quick facts แสดงข้อมูลสั้น ๆ -->
+        <ul class="facts" aria-label="ข้อมูลสรุปพื้นที่">
+          <li><strong>พื้นที่เด่น:</strong> ป่าฮาลา–บาลา</li>
+          <li><strong>ไฮไลต์ธรรมชาติ:</strong> น้ำตกสิรินธร</li>
+          <li><strong>นกเงือก:</strong> พบมากกว่า 10 สายพันธุ์</li>
+          <li><strong>วัฒนธรรม:</strong> พิพิธภัณฑ์โละจูด</li>
+        </ul>
+      </div>
+
+      <!-- ภาพ hero -->
+      <figure class="hero__media">
+        <img
+          src="assets/images/hero.jpg"
+          alt="ทิวทัศน์ธรรมชาติในพื้นที่บูเก๊ะตา"
+          width="1200" height="800" loading="eager" decoding="async">
+        <figcaption class="visually-hidden">ภาพธรรมชาติสีเขียวของบูเก๊ะตา</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ====== Highlights: 5 จุดเด่นหลัก ====== -->
+  <section id="highlights" class="section section--alt" role="region" aria-label="จุดเด่น">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">จุดเด่น</h2>
+        <p class="section__lead">ธรรมชาติ–วัฒนธรรม–ชุมชน ครบในที่เดียว</p>
+      </header>
+
+      <div class="grid grid--3">
+        <!-- ป่าฮาลา–บาลา -->
+        <a class="card" href="destinations.html#hala-bala" aria-label="ดูรายละเอียด ป่าฮาลา–บาลา">
+          <div class="card__media">
+            <img src="assets/images/hala-bala.jpg" alt="ป่าฮาลา–บาลา" loading="lazy">
+          </div>
+          <div class="card__body">
+            <p class="kicker">ธรรมชาติ</p>
+            <h3 class="card__title">ป่าฮาลา–บาลา</h3>
+            <p class="card__text">ผืนป่าดิบชื้น ฉายา “อะเมซอนแห่งอาเซียน” บ้านของนกเงือกนานาชนิด</p>
+          </div>
+        </a>
+
+        <!-- น้ำตกสิรินธร -->
+        <a class="card" href="destinations.html#sirindhorn" aria-label="ดูรายละเอียด น้ำตกสิรินธร">
+          <div class="card__media">
+            <img src="assets/images/sirindhorn.jpg" alt="น้ำตกสิรินธร" loading="lazy">
+          </div>
+          <div class="card__body">
+            <p class="kicker">ธรรมชาติ</p>
+            <h3 class="card__title">น้ำตกสิรินธร</h3>
+            <p class="card__text">สายน้ำใสเย็น เล่นน้ำได้หลายจุด เหมาะกับครอบครัว</p>
+          </div>
+        </a>
+
+        <!-- ดูนกเงือก -->
+        <a class="card" href="hornbill.html" aria-label="ดูรายละเอียด ดูนกเงือก">
+          <div class="card__media">
+            <img src="assets/images/hornbill.jpg" alt="ดูนกเงือก" loading="lazy">
+          </div>
+          <div class="card__body">
+            <p class="kicker">ธรรมชาติ</p>
+            <h3 class="card__title">ดูนกเงือก</h3>
+            <p class="card__text">พบได้มากกว่า 10 สายพันธุ์ มีจุดชมหลายตำแหน่งรอบผืนป่า</p>
+          </div>
+        </a>
+
+        <!-- พิพิธภัณฑ์โละจูด -->
+        <a class="card" href="destinations.html#lojood" aria-label="ดูรายละเอียด พิพิธภัณฑ์โละจูด">
+          <div class="card__media">
+            <img src="assets/images/lojood.jpg" alt="พิพิธภัณฑ์โละจูด" loading="lazy">
+          </div>
+          <div class="card__body">
+            <p class="kicker">วัฒนธรรม</p>
+            <h3 class="card__title">พิพิธภัณฑ์โละจูด</h3>
+            <p class="card__text">เรียนรู้วิถีมลายูท้องถิ่น ชมกริชและเครื่องใช้โบราณ</p>
+          </div>
+        </a>
+
+        <!-- สวนสาธารณะโต๊ะดาตู -->
+        <a class="card" href="destinations.html#tota-datu" aria-label="ดูรายละเอียด สวนสาธารณะโต๊ะดาตู">
+          <div class="card__media">
+            <img src="assets/images/tota-datu.jpg" alt="สวนสาธารณะโต๊ะดาตู" loading="lazy">
+          </div>
+          <div class="card__body">
+            <p class="kicker">ชุมชน</p>
+            <h3 class="card__title">สวนสาธารณะโต๊ะดาตู</h3>
+            <p class="card__text">แลนด์มาร์กรูปปั้นนกเงือก สนามเด็กเล่นและที่พักผ่อนของชุมชน</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Callout: มารยาทชมธรรมชาติ ====== -->
+  <section class="section callout" role="note" aria-label="แนวทางท่องเที่ยวอย่างรับผิดชอบ">
+    <div class="container callout__inner">
+      <div class="callout__copy">
+        <h2 class="callout__title">เที่ยวอย่างเคารพธรรมชาติ</h2>
+        <p class="callout__text">
+          ใช้กล้องส่องทางไกล รักษาระยะห่างจากสัตว์ป่า ไม่ส่งเสียงดัง ไม่ทิ้งขยะ และอย่ารบกวนโพรงนกเงือก
+          เพื่อให้ธรรมชาติคงความงดงามอย่างยั่งยืน
+        </p>
+      </div>
+      <div class="callout__actions">
+        <a class="btn btn--ghost" href="hornbill.html" aria-label="อ่านคำแนะนำการดูนกเงือก">คำแนะนำดูนกเงือก</a>
+        <a class="btn btn--ghost" href="destinations.html" aria-label="แหล่งท่องเที่ยวทั้งหมด">ดูจุดท่องเที่ยว</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== News Teaser: ข่าว/กิจกรรมล่าสุด ====== -->
+  <section id="news" class="section" role="region" aria-label="ข่าวสารและกิจกรรม">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">ข่าวสาร & กิจกรรม</h2>
+        <p class="section__lead">กิจกรรมชุมชนและเทศกาลท้องถิ่นที่ไม่ควรพลาด</p>
+      </header>
+
+      <div class="grid grid--3">
+        <!-- ตัวอย่างการ์ดข่าว -->
+        <article class="card">
+          <div class="card__body">
+            <p class="kicker">กิจกรรม</p>
+            <h3 class="card__title">เดินป่าชมป่าฮาลา–บาลา</h3>
+            <p class="card__text">ร่วมเดินสำรวจเส้นทางธรรมชาติ เรียนรู้ระบบนิเวศและการเฝ้าระวังสัตว์ป่า</p>
+            <p class="meta"><strong>วันที่:</strong> 5 ธ.ค. 2025</p>
+            <a class="btn btn--small" href="events.html" aria-label="ดูรายละเอียดกิจกรรมเพิ่มเติม">ดูทั้งหมด</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <p class="kicker">เทศกาล</p>
+            <h3 class="card__title">เทศกาลชมนกเงือก</h3>
+            <p class="card__text">กิจกรรมชมและเก็บข้อมูลนกเงือกอย่างรับผิดชอบ พร้อมจุดถ่ายภาพแนะนำ</p>
+            <p class="meta"><strong>วันที่:</strong> 10 ก.พ. 2026</p>
+            <a class="btn btn--small" href="events.html">ดูทั้งหมด</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <p class="kicker">วัฒนธรรม</p>
+            <h3 class="card__title">เวิร์กช็อปวัฒนธรรมมลายู</h3>
+            <p class="card__text">ทำความรู้จักกริชและภูมิปัญญาท้องถิ่น ณ พิพิธภัณฑ์โละจูด</p>
+            <p class="meta"><strong>วันที่:</strong> 15 มี.ค. 2026</p>
+            <a class="btn btn--small" href="events.html">ดูทั้งหมด</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Gallery Teaser ====== -->
+  <section id="gallery" class="section section--alt" role="region" aria-label="แกลเลอรีภาพ">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">แกลเลอรี</h2>
+        <p class="section__lead">ภาพบรรยากาศธรรมชาติ วัฒนธรรม และชุมชน</p>
+      </header>
+
+      <div class="masonry">
+        <!-- ใส่รูปจริงในโฟลเดอร์ assets/images/ ให้ตรงกับ src ด้านล่าง -->
+        <figure class="masonry__item"><img src="assets/images/hala-bala.jpg" alt="ผืนป่าฮาลา–บาลา" loading="lazy"></figure>
+        <figure class="masonry__item"><img src="assets/images/sirindhorn.jpg" alt="น้ำตกสิรินธร" loading="lazy"></figure>
+        <figure class="masonry__item"><img src="assets/images/hornbill.jpg" alt="นกเงือก" loading="lazy"></figure>
+        <figure class="masonry__item"><img src="assets/images/lojood.jpg" alt="พิพิธภัณฑ์โละจูด" loading="lazy"></figure>
+        <figure class="masonry__item"><img src="assets/images/tota-datu.jpg" alt="สวนสาธารณะโต๊ะดาตู" loading="lazy"></figure>
+      </div>
+
+      <div class="section__foot">
+        <a class="btn" href="gallery.html" aria-label="ดูแกลเลอรีทั้งหมด">ดูทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <strong>เทศบาลตำบลบูเก๊ะตา</strong>
+        <p>ตำบลโละจูด อำเภอแว้ง</p>
+      </div>
+
+
+      <div class="footer__meta">
+        <p>© <span id="year"></span> เทศบาลตำบลบูเก๊ะตา — ธรรมชาติ • วัฒนธรรม • ชุมชน</p>
+        <p class="muted">เว็บไซต์เพื่อการประชาสัมพันธ์การท่องเที่ยว</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== JS ส่วนกลาง (จะส่งไฟล์นี้ให้ในข้อความถัดไป) ====== -->
+  <script src="Js/script.js" defer></script>
+
+  <!-- ====== Progressive Enhancement: ปุ่มกลับขึ้นบน ====== -->
+  <button id="toTop" class="to-top" aria-label="กลับขึ้นด้านบน">▲</button>
+</body>
+</html>
